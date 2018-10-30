@@ -1,3 +1,4 @@
+var cors = require('cors');
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -9,6 +10,7 @@ mongoose.connect("mongodb://localhost/todo");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 //Middleware to not found routes
 // app.use(function(req, res) {
